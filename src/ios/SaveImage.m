@@ -12,7 +12,7 @@
 
         NSLog(@"Image absolute path: %@", imgAbsolutePath);
 
-	    UIImage *image = [UIImage imageWithContentsOfFile:imgAbsolutePath];
+	    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imgAbsolutePath]]];
 	    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 	}];
 }
